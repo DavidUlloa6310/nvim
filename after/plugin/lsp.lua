@@ -5,6 +5,11 @@ lsp_zero.extend_lspconfig()
 lsp_zero.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
+  -- lspsaga keybinds
+  vim.keymap.set("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+  vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<CR>", opts)
+  vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -22,23 +27,22 @@ end)
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {
+      'tsserver',
       'rust_analyzer',
       'gopls',
       'tailwindcss',
-      'pylsp',
-      'dockerls'
+      'pyright',
+      'dockerls',
+      'eslint',
+      'cssls',
+      'html',
+      'jsonls'
   },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
       local lua_opts = lsp_zero.nvim_lua_ls()
-      local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup(lua_opts)
-      lspconfig.pylsp.setup{}
-      lspconfig.tailwindcss.setup{}
-      lspconfig.rust_analyzer.setup{}
-      lspconfig.gopls.setup{}
-      lspconfig.dockerls.setup{}
+      require('lspconfig').lua_ls.setup(lua_opts)
     end,
   }
 })

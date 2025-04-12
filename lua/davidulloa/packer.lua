@@ -62,4 +62,14 @@ return require('packer').startup(function (use)
         run = "make install_jsregexp"
     })
 
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
+    use {
+        "glepnir/lspsaga.nvim",
+        config = function() require("lspsaga").setup {} end,
+    }
+
 end)
