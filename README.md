@@ -1,5 +1,7 @@
 #   David's Neovim Configuration
 
+This repository contains my personal Neovim configuration, designed for efficient and streamlined development. It leverages various plugins to enhance functionality, including LSP support, autocompletion, file management, and more.
+
 ##   Repository Structure
 
 The core of the configuration is organized as follows:
@@ -25,80 +27,80 @@ Here's a breakdown of the keybindings used in this configuration:
 
 ###   General
 
-* `<leader>pv`:  Open the current file's directory in Neovim's Ex mode.  The `<leader>` key is set to space (" ") in `lua/davidulloa/remap.lua`. [cite: 13, 2]
+* `<leader>pv`:  Open the current file's directory in Neovim's Ex mode. The `<leader>` key is set to space (" ") in `lua/davidulloa/remap.lua`.
 
 ###   Git (vim-fugitive)
 
-* `<leader>gs`: Open the Git status window. [cite: 2]
+* `<leader>gs`: Open the Git status window.
 
 ###   Harpoon
 
-* `<C-a>`:  Add the current file to the harpoon mark list. [cite: 3]
-* `<leader>a`: Toggle the harpoon quick menu. [cite: 3]
-* `<C-h>`: Navigate to file 1 in the harpoon list. [cite: 3]
-* `<C-j>`: Navigate to file 2 in the harpoon list. [cite: 3]
-* `<C-k>`: Navigate to file 3 in the harpoon list. [cite: 3]
-* `<C-l>`: Navigate to file 4 in the harpoon list. [cite: 3]
+* `<C-a>`:  Add the current file to the harpoon mark list.
+* `<leader>a`: Toggle the harpoon quick menu.
+* `<C-h>`: Navigate to file 1 in the harpoon list.
+* `<C-j>`: Navigate to file 2 in the harpoon list.
+* `<C-k>`: Navigate to file 3 in the harpoon list.
+* `<C-l>`: Navigate to file 4 in the harpoon list.
 
 ###   LSP (Language Server Protocol)
 
-* `gh`:  `Lspsaga lsp_finder` (finds LSP related information). [cite: 3, 4]
-* `gp`:  `Lspsaga peek_definition` (peek definition of a symbol). [cite: 3, 4]
-* `K`:   `Lspsaga hover_doc` (show hover documentation). [cite: 3, 4]
-* `gd`:  Go to definition. [cite: 3, 4]
-* `K`:   Show hover information. [cite: 3, 4]
-* `<leader>vws`:  Workspace symbol search. [cite: 3, 4]
-* `<leader>vd`:  Show diagnostics in a floating window. [cite: 3, 4]
-* `[d`:   Go to the next diagnostic. [cite: 3, 4]
-* `]d`:   Go to the previous diagnostic. [cite: 4]
-* `<leader>vca`:  Code action. [cite: 4]
-* `<leader>vrr`:  Show references. [cite: 4]
-* `<leader>vrn`:  Rename symbol. [cite: 4]
-* `<C-h>`:  Show signature help (in insert mode). [cite: 4]
-* `<C-p>`: Select previous item in autocompletion menu. [cite: 6]
-* `<C-n>`: Select next item in autocompletion menu. [cite: 6]
-* `<C-c>`: Confirm completion. [cite: 6]
-* `<C-Space>`: Trigger completion. [cite: 6]
+* `gh`:  `Lspsaga lsp_finder` (finds LSP related information).
+* `gp`:  `Lspsaga peek_definition` (peek definition of a symbol).
+* `K`:   `Lspsaga hover_doc` (show hover documentation).
+* `gd`:  Go to definition.
+* `K`:   Show hover information.
+* `<leader>vws`:  Workspace symbol search.
+* `<leader>vd`:  Show diagnostics in a floating window.
+* `[d`:   Go to the next diagnostic.
+* `]d`:   Go to the previous diagnostic.
+* `<leader>vca`:  Code action.
+* `<leader>vrr`:  Show references.
+* `<leader>vrn`:  Rename symbol.
+* `<C-h>`:  Show signature help (in insert mode).
+* `<C-p>`: Select previous item in autocompletion menu.
+* `<C-n>`: Select next item in autocompletion menu.
+* `<C-c>`: Confirm completion.
+* `<C-Space>`: Trigger completion.
 
 ###   Telescope
 
-* `<leader>pf`: Find files. [cite: 6]
-* `<C-p>`:    Find Git files. [cite: 6]
-* `<leader>ps`: Grep string (find string in files). [cite: 6]
+* `<leader>pf`: Find files.
+* `<C-p>`:    Find Git files.
+* `<leader>ps`: Grep string (find string in files).
 
 ###   Undotree
 
-* `<leader>u`: Toggle the Undotree window. [cite: 9]
+* `<leader>u`: Toggle the Undotree window.
 
 ##   Plugin Management
 
-* `packer.nvim` is used for plugin management.  See `lua/davidulloa/packer.lua` for the plugin list and configuration. [cite: 9, 10, 11, 12, 19, 20, 21, 22]
+* `packer.nvim` is used for plugin management. See `lua/davidulloa/packer.lua` for the plugin list and configuration.
 * To install plugins, use Packer's commands (e.g., `:PackerSync`).
 
 ##   LSP Configuration
 
-* `lsp-zero` is used to simplify LSP configuration. [cite: 3, 4, 5, 11]
-* `mason.nvim` and `mason-lspconfig.nvim` are used to manage and install LSP servers. [cite: 4, 5, 11]
-* See `after/plugin/lsp.lua` for LSP server setup and keybindings. [cite: 3, 4, 5]
+* `lsp-zero` is used to simplify LSP configuration.
+* `mason.nvim` and `mason-lspconfig.nvim` are used to manage and install LSP servers.
+* See `after/plugin/lsp.lua` for LSP server setup and keybindings.
 
 ##   Treesitter
 
-* `nvim-treesitter` is used for improved syntax highlighting and code navigation. [cite: 6, 7, 8, 9, 10, 21]
-* See `after/plugin/treesitter.lua` for configuration. [cite: 6, 7, 8, 9, 10]
+* `nvim-treesitter` is used for improved syntax highlighting and code navigation.
+* See `after/plugin/treesitter.lua` for configuration.
 
 ##   Custom Settings
 
 * Various Neovim options are set in `lua/davidulloa/set.lua`, including:
-    * Line numbering. [cite: 14]
-    * Tab settings. [cite: 14]
-    * Indentation. [cite: 14]
-    * Search behavior. [cite: 14]
-    * UI settings (e.g., color column, termguicolors). [cite: 14]
-    * Markdown wrapping. [cite: 14]
+    * Line numbering.
+    * Tab settings.
+    * Indentation.
+    * Search behavior.
+    * UI settings (e.g., color column, termguicolors).
+    * Markdown wrapping.
 
 ##   Color Scheme
 
-* [rose-pine](https://github.com/rose-pine/neovim) is the color scheme. [cite: 10, 22]
-* It is configured in `lua/davidulloa/packer.lua`. [cite: 10, 22]
+* [rose-pine](https://github.com/rose-pine/neovim) is the color scheme.
+* It is configured in `lua/davidulloa/packer.lua`.
 
 This README provides a comprehensive overview of the Neovim configuration. Remember to explore the individual files for more detailed information and customization options.
